@@ -4,36 +4,37 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PaginaController;
 use App\Http\Controllers\ProductoController;
 
-// RUTA 1 — Inicio
+/*
+|--------------------------------------------------------------------------
+| Rutas principales del sitio
+|--------------------------------------------------------------------------
+*/
 
+// Página de inicio
 Route::get('/', [PaginaController::class, 'inicio'])
     ->name('inicio');
 
-
-// RUTA 2 — Sobre mí
-
+// Información personal
 Route::get('/sobre-mi', [PaginaController::class, 'sobreMi'])
     ->name('sobre-mi');
 
-
-// RUTA 3 — Materias
-
+// Listado de materias
 Route::get('/materias', [PaginaController::class, 'materias'])
     ->name('materias');
 
-
-// RUTA 4 — Contacto 
-
+// Formulario de contacto
 Route::get('/contacto', [PaginaController::class, 'contacto'])
     ->name('contacto');
 
-
-// RUTA 5 — Contacto 
-
+// Procesamiento del formulario de contacto
 Route::post('/contacto', [PaginaController::class, 'procesarContacto'])
     ->name('contacto.procesar');
 
-//RUTA 6 - Producto    
-
+// Módulo de productos
 Route::get('/productos', [ProductoController::class, 'index'])
     ->name('productos.index');
+
+// Ruta de respaldo para páginas inexistentes
+Route::fallback(function () {
+    return redirect()->route('inicio');
+});
