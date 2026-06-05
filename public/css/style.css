@@ -239,6 +239,30 @@ footer {
     margin-bottom: 8px;
 }
 
+.contenedor-sobre-mi {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.foto-perfil {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto 20px auto;
+    border-radius: 15px;
+    border: 3px solid rgba(255,255,255,0.3);
+}
+
+.datos-personales {
+    text-align: center;
+}
+
+.datos-personales p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
 @media (max-width: 768px) {
 
     header {
