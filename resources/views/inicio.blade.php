@@ -5,6 +5,9 @@
 @section('contenido')
 
 <section>
+    <p>
+    Sitio actualizado desde la rama desarrollo.
+    </p>
 
     <h2>🌙 Bienvenido a MidnightClub</h2>
 
