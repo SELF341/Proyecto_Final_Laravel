@@ -4,6 +4,11 @@
 
 @section('contenido')
 
+<p>
+    Si deseas comunicarte conmigo para consultas académicas o proyectos,
+    completa el siguiente formulario.
+</p>
+
 <section>
     <h2>Contacto</h2>
 
@@ -15,19 +20,19 @@
         @csrf
 
         <label>Nombre</label>
-        <input type="text" name="nombre">
+        <input type="text" name="nombre" placeholder="Ingrese su nombre">
         @error('nombre')
         <p style="color:red;">{{ $message }}</p>
         @enderror
 
         <label>Email</label>
-        <input type="email" name="email">
+        <input type="email" name="email" placeholder="Ingrese su correo">
         @error('email')
         <p style="color:red;">{{ $message }}</p>
         @enderror
 
         <label>Mensaje</label>
-        <textarea name="mensaje" rows="5"></textarea>
+        <textarea name="mensaje" rows="5" placeholder="Escriba su mensaje"></textarea>
         @error('mensaje')
         <p style="color:red;">{{ $message }}</p>
         @enderror
