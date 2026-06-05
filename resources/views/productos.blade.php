@@ -16,6 +16,10 @@
 
     </p>
 
+    <p>
+    Total de productos registrados: {{ count($productos) }}
+    </p>
+
     <table>
 
         <thead>
