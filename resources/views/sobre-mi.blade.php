@@ -1,11 +1,36 @@
-<section>
+@extends('layouts.app')
 
-    <h2>Objetivos Profesionales</h2>
+@section('titulo', 'Sobre mí')
 
-    <p>
-        Mi objetivo es especializarme en desarrollo de software y tecnologías web,
-        fortaleciendo mis conocimientos en programación, bases de datos y
-        arquitectura de aplicaciones.
-    </p>
+@section('contenido')
+
+<section class="contenedor-sobre-mi">
+
+    <h2>Sobre mí</h2>
+
+    <div class="tarjeta-sobre-mi">
+
+        <img src="{{ asset('img/fotoperfil.png') }}"
+             alt="Fernando Silva"
+             class="foto-perfil">
+
+        <div class="datos-personales">
+
+            <p><strong>Nombre:</strong> Lui Fernando Espinoza Silva</p>
+
+            <p><strong>Carrera:</strong> Ingeniería de Sistemas</p>
+
+            <p><strong>Semestre:</strong> Quinto semestre</p>
+
+            <p>
+                <strong>Frase personal:</strong>
+                Compilo errores... y también experiencia.
+            </p>
+
+        </div>
+
+    </div>
 
 </section>
+
+@endsection
