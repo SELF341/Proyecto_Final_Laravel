@@ -24,23 +24,24 @@ class PaginaController extends Controller
     }
 
     public function materias()
-    {
-        $materias = Materia::all();
+{
+    $materias = Materia::all();
 
-    $promedio = round($materias->avg(fn(Materia $m) => $m->getNota()) ?? 0, 2);
+    $promedio = round(
+        $materias->avg(fn(Materia $m) => $m->getNota()) ?? 0,
+        2
+    );
 
-    $aprobadas = $materias->filter(fn(Materia $m) => $m->estaAprobada())->count();
+    $aprobadas = $materias
+        ->filter(fn(Materia $m) => $m->estaAprobada())
+        ->count();
 
-    return view('materias', compact('materias', 'promedio', 'aprobadas'));
-
-    $notas = array_map(fn(Materia $m) => $m->getNota(), $materias);
-
-    $promedio = round(array_sum($notas) / count($notas), 2);
-
-    $aprobadas = count(array_filter($materias, fn(Materia $m) => $m->estaAprobada()));
-
-    return view('materias', compact('materias', 'promedio', 'aprobadas'));
-    }
+    return view('materias', compact(
+        'materias',
+        'promedio',
+        'aprobadas'
+    ));
+}
 
     public function contacto()
     {
@@ -49,7 +50,7 @@ class PaginaController extends Controller
 
     public function procesarContacto(Request $request)
     {
-        $validated = $request->validate([
+        $request->validate([
         'nombre' => 'required|min:3|max:100',
         'email' => 'required|email',
         'mensaje' => 'required|min:10',
