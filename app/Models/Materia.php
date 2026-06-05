@@ -35,4 +35,10 @@ class Materia extends Model
             default => '#f8d7da',
         };
     }
+    public function getResumen(): string
+{
+    return "{$this->codigo} - {$this->nombre} ({$this->creditos} créditos)";
+}
+
+
 }
