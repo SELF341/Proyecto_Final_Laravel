@@ -4,11 +4,6 @@
 
 @section('contenido')
 
-<p>
-    Si deseas comunicarte conmigo para consultas académicas o proyectos,
-    completa el siguiente formulario.
-</p>
-
 <section>
     <h2>Contacto</h2>
 

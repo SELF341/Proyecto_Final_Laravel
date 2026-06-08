@@ -7,10 +7,12 @@
 <section>
     <h2>Mis materias</h2>
 
-    <p><strong>Promedio:</strong> {{ $promedio }}</p>
-    <p><strong>Materias aprobadas:</strong> {{ $aprobadas }}</p>
+    <div class="resumen-materias">
+        <p><strong>Promedio:</strong> {{ $promedio }}</p>
+        <p><strong>Materias aprobadas:</strong> {{ $aprobadas }}</p>
+    </div>
 
-    <table>
+    <table class="tabla-materias">
         <tr>
             <th>Código</th>
             <th>Materia</th>
@@ -20,12 +22,16 @@
         </tr>
 
         @foreach ($materias as $m)
-            <tr style="background: {{ $m->getColorEstado() }}">
+            <tr>
                 <td>{{ $m->getCodigo() }}</td>
                 <td>{{ $m->getNombre() }}</td>
-                <td style="text-align:center;">{{ $m->getCreditos() }}</td>
-                <td style="text-align:center; font-weight:bold;">{{ $m->getNota() }}</td>
-                <td style="text-align:center; font-weight:bold;">{{ $m->getEstado() }}</td>
+                <td class="centrado">{{ $m->getCreditos() }}</td>
+                <td class="centrado nota">{{ $m->getNota() }}</td>
+                <td class="centrado">
+                    <span class="estado {{ strtolower($m->getEstado()) }}">
+                        {{ $m->getEstado() }}
+                    </span>
+                </td>
             </tr>
         @endforeach
     </table>
